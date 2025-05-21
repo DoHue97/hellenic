@@ -1,9 +1,23 @@
 
 
-import { Dimensions, Platform } from 'react-native';
+import { Dimensions, PixelRatio, Platform } from 'react-native';
 import { useTheme } from 'native-base';
 const { colors, fontSizes } = useTheme();
+
+const deviceWidth = Dimensions.get("window").width;
+const deviceHeight = Dimensions.get("window").height;
+const isPlus = deviceHeight > 680;
+const isSmall = deviceHeight < 550;
+const isIphoneX = Platform === "ios" && (deviceHeight === 812 || deviceWidth === 812 || deviceHeight === 896 || deviceWidth === 896);
+const borderWidth = 1 / PixelRatio.getPixelSizeForLayoutSize(1);
+
 export var main_styles = {
+    isPlus,
+    isSmall,
+    isIphoneX,
+    borderWidth,
+    deviceWidth,
+    deviceHeight,
     icon_xsmall: {
         fontSize: fontSizes.md,
     },

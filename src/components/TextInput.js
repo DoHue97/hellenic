@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { HStack, Text, useTheme, InputGroup, Input } from 'native-base';
-import { WarningIcon, SuccessIcon, ErrorIcon } from "./Icons";
+import { WarningIcon, SuccessIcon, ErrorIcon } from "./IconsComponent";
 
 function TextInput(props) {
     const { 

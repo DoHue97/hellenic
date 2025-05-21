@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import { StatusBar, StyleSheet, View } from 'react-native';
 import { Button, HStack, Heading, Text, useTheme } from 'native-base'
-import { BackIcon, MenuBarIcon } from './Icons';
+import { BackIcon, MenuBarIcon } from './IconsComponent';
 
 function Header(props) {
     const { hideLeft, leftCustom, rightCustom, title, isDrawer } = props;

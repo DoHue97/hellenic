@@ -123,7 +123,8 @@ const initTheme = (config) => {
                 card: colorScreenCard,
                 wallet: colorScreenCard,
                 item: isDarkMode ? 'rgba(255, 255, 255, 0.1)' : colorScreenCard,
-                info: "#F0F0F3"
+                info: "#F0F0F3",
+                modal: 'rgba(33, 33, 33, 0.7)',
             },
             card: {
                 background: colorScreenCard,
@@ -137,6 +138,7 @@ const initTheme = (config) => {
                 text: "#03041D",
                 label: "#212121",
                 border: "transparent",
+                placeholder: '#A2A2A2',
             },
             tabbar: {
                 background: isDarkMode ? '#212121' : "#ffffff",
@@ -162,7 +164,8 @@ const initTheme = (config) => {
                 900: '#4A4F52',
                 landing: isDarkMode ? "#ffffff" : '#212121',
                 onLight: '#212121',
-                label:isDarkMode ? "#ffffff" : '#00104D99'
+                label: isDarkMode ? "#ffffff" : '#00104D99',
+                info: '#A2A2A2',
             },
         },
 
