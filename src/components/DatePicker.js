@@ -6,7 +6,7 @@ import { Platform } from 'react-native';
 import { formatDateToDDMMYYYY } from '../utils/util';
 import moment from 'moment';
 import { strings } from '../translations';
-import { LockIcon } from './Icons';
+import { LockIcon } from './IconsComponent';
 function DatePicker(props) {
     const { placeHolder, mode, disabled, maximumDate, minimumDate, border, value } = props;
     let momentValue = value ? moment(value, 'MM/DD/YYYY') : null;

@@ -1,29 +1,28 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
-import { Box, Button, Center, Modal, Text, useTheme } from 'native-base'
+import { Button, Text, useTheme } from 'native-base'
+import Modal from "react-native-modal";
 
 function AlertComponent(props) {
     const [style, setStyle] = useState({})
-    const { isOpen, message, otherMessage, onClose, actionName, buttonWidth, hideButton } = props;
+    const { isVisible, title, message, onOkAction, actionName } = props;
     const { colors } = useTheme();
     const resizeModal = (ev) => {
         setStyle({ height: ev.nativeEvent.layout.height + 10 });
     }
-    const currentStyles = useGlobalStyles();
+    const styles = useGlobalStyles();
     console.log("AAAA AlertComponent props: ", props)
     return (
-        <Modal isOpen={isOpen} onClose={!hideButton ? onClose : undefined}>
-            <View onLayout={(ev) => { resizeModal(ev) }} style={currentStyles.modal_alert}>
-                <Center>
-                    <Text color={colors.textCustom.onLight} textAlign={'center'} fontSize={"md"} accessibilityLabel='message'>{message}</Text>
-                    {otherMessage}
-                    {!hideButton && <Box marginTop={8} width={buttonWidth ? buttonWidth : '30%'}>
-                        <Button colorScheme={"primary"} onPress={() => onClose()} accessibilityLabel='btnOk'>
-                            {actionName ? actionName : "OK"}
-                        </Button>
-                    </Box>}
-                </Center>
+        <Modal isOpen={isVisible}>
+            <View onLayout={(ev) => { resizeModal(ev) }} style={[styles.modal, styles.alert]}>
+                <Text center bold>{title}</Text>
+                <Text center>{message}</Text>
+                <View style={{ width: '100%', marginTop: 20 }}>
+                    <Button onPress={() => onOkAction()}>
+                        <Text>{actionName ? actionName : "OK"}</Text>
+                    </Button>
+                </View>
             </View>
         </Modal>
     )
@@ -37,18 +36,24 @@ function useGlobalStyles() {
 }
 
 const getGlobalStyles = (props) => StyleSheet.create({
-    modal_alert: {
+    modal: {
         width: '90%',
         marginLeft: '5%',
         marginRight: '5%',
-        backgroundColor: props.colors.white,
-        paddingVertical: 16,
-        paddingHorizontal: 14,
-        borderRadius: 8,
-        borderWidth: 1,
-        borderColor: props.colors.border.main,
+        backgroundColor: props.colors.primary[600],
+        borderRadius: 10,
+    },
+    alert:{
+        paddingTop: 30,
+        paddingBottom: 30,
+        paddingLeft: 15,
+        paddingRight: 15,
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });
+
 AlertComponent.propTypes = {
     isOpen: PropTypes.bool,
     message: PropTypes.string,
