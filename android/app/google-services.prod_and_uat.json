@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "537074923679",
+    "project_id": "mple-app",
+    "storage_bucket": "mple-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537074923679:android:e79150a798a08af2494aaa",
+        "android_client_info": {
+          "package_name": "com.hellenicbank.LoyaltyApp.uat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537074923679-3agmagmqg5aab838e6dabukl3kg0ak9q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAtE6AJBPVSnvLKVqsIFLEBrr75nQYvA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537074923679-3agmagmqg5aab838e6dabukl3kg0ak9q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "537074923679-qlj5dnl7itjd0ev5m60rbdagkhp5sics.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hellenicbank.LoyaltyApp",
+                "app_store_id": "1522420647"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
